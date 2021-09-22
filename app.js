@@ -1,25 +1,21 @@
-let val;
+let result = 0;
 
-// number -> string
-val = String(555);
-val = String(4+4);
-val = String(5.6);
+// maths
+relult = Math.PI;
+relult = Math.round(2.5);
+result = Math.ceil(2.3);
+result = Math.floor(2.8);
+result = Math.sqrt(64);
+result = Math.abs(-3);
+result = Math.pow(-3);
 
-// number -> boolean
-val = Boolean(0); // false
-val = Boolean(1); // true
+result = Math.min(90,190,5,900,1000);
+result = Math.max(90,190,5,900,1000);
 
-// boolean -> string
-val = String(true);
-val = String(false);
+result = Math.round(math.round() * 10);
 
-// objekt -> string
-val = String(new Date());
+result = document.getElementById("fnumber").outerHTML;
 
-// massiiv -> string
-val = String([1, 2, 3, 4]);
-
-
-
-console.log(typeof val);
-console.log(val);
+function liida(){
+	document.getElementById("vastus").innerHTML = "Vastus on " + result;
+};
