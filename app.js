@@ -1,21 +1,40 @@
-let result = 0;
+let val;
+const name = "Alex";
+const surname = "Meknik";
+const age = 20;
+const text = "Be happy don't worry";
+const tags = " arendus, opetatsioon, programmeerimine, mata";
 
-// maths
-relult = Math.PI;
-relult = Math.round(2.5);
-result = Math.ceil(2.3);
-result = Math.floor(2.8);
-result = Math.sqrt(64);
-result = Math.abs(-3);
-result = Math.pow(-3);
+// concatenation
+val = name + " " + surname;
 
-result = Math.min(90,190,5,900,1000);
-result = Math.max(90,190,5,900,1000);
+// append
+val += " " + age + " aastat vana";
 
-result = Math.round(math.round() * 10);
+val += "\n" + text + " Minu tegevusalad on " + tags;
 
-result = document.getElementById("fnumber").outerHTML;
+// while loop
 
-function liida(){
-	document.getElementById("vastus").innerHTML = "Vastus on " + result;
+let int = val.length;
+while (int != 0){
+	console.log(val[int]);
+	int -= 1;
 };
+
+// suuruse vahetus
+val = name.toUpperCase();
+val = surname.toLowerCase();
+
+
+val = surname[0];
+val = surname.indexOf(0);
+
+val = surname.charAt(2);
+val = surname.charAt(surname.length - 1);
+
+val = surname.substring(0, 4);
+val = surname.slice(0, 4);
+val = surname.slice(-3);
+
+val = tags.split();
+document.getElementById("demo").innerHTML = val;
