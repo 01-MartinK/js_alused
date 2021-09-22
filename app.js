@@ -1,48 +1,25 @@
-// Andmetüübid
+let val;
 
-// Primitiivid
+// number -> string
+val = String(555);
+val = String(4+4);
+val = String(5.6);
 
-// String - tekst
-const name = "MK";
-console.log(typeof name);
+// number -> boolean
+val = Boolean(0); // false
+val = Boolean(1); // true
 
-// Number
-const age = 72;
-console.log(typeof age);
+// boolean -> string
+val = String(true);
+val = String(false);
 
-// Float
-const percent = 32.3;
-console.log(typeof percent);
+// objekt -> string
+val = String(new Date());
 
-// Boolean
-const has_kids = false;
-console.log(typeof has_kids);
+// massiiv -> string
+val = String([1, 2, 3, 4]);
 
-// Null
-const airplane = null;
-console.log(typeof airplane);
 
-// Undefined
-let test;
-console.log(typeof test);
 
-// Char
-const char = Symbol();
-console.log(typeof char);
-
-// Objects - referance types - tüübid, mille sisu saab viide kaudu
-// Array - massiiv
-const hobbies = ['movies', 'music'];
-console.log(typeof hobbies);
-
-// Object
-const person = {
-	name: "kadi",
-	age: 15
-};
-console.log(typeof person);
-
-// näiteks kuupäev objekt
-const today = new Date();
-console.log(typeof today);
-console.log(today.getHours());
+console.log(typeof val);
+console.log(val);
