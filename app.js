@@ -1,36 +1,23 @@
-const numbers = [43, 62, 213, 43, 54, 56, 1, 23];
-const numbers2 = new Array(22,765,43,21,12);
-const fruits = ['apple','pair','banana','dragonfruit']
-const mixed = [22, 'tere', true, undefined, null, {a:1,v:2}, new Date()];
+const person = {
+	firstName: "Alex",
+	lastName: "Mason",
+	age: 72,
+	email: "kadi.tamm@gmail.com",
+	hobbies: ["muusika","sport"],
+	address: {
+		city: "Singapore",
+		county: "Madagascar"
+	}
+};
 
 let val;
 
-val = numbers.indexOf(1); // leidmine indexi vaartuse elemendi kaudu
-numbers2[4] = 62; // elemendi muutmine
+val = person;
 
-numbers2.push(72);
-numbers2.unshift(54);
-numbers2.pop();
-numbers2.shift();
-console.log(numbers2);
+val = person.firstName;
+val = person['lastName'];
+val = person.age;
+val = person.hobbies[1];
+val = person.address['city'];
 
-//numbers2.splice(1,3); loikamine
-
-//numbers2.reverse(); umberpooramine
-
-let kokku = numbers.concat(numbers2); // massiivide liitmine
-
-console.log(kokku);
-console.log(Array.isArray(numbers2)); // massiivi kontrollimine
-console.log(numbers);
-
-// massiivi sorteerimine
-numbers2.sort(function(x, y){ 
-	return y - x;
-});
-
-// String massiivi sorteerimine
-console.log(fruits.sort());
-
-console.log(numbers2);
 console.log(val);
