@@ -1,40 +1,33 @@
-let val;
-const name = "Alex";
-const surname = "Meknik";
-const age = 20;
-const text = "Be happy don't worry";
-const tags = " arendus, opetatsioon, programmeerimine, mata";
+const name = "mk";
+const age = 25;
+const job = "student";
+const city = "tartu";
+const hobbies = ["programming","boxing","nature"];
 
-// concatenation
-val = name + " " + surname;
+let html = '<ul>' + 
+				'<li>' + name + '</li>' + 
+				'<li>' + age + '</li>' + 
+				'<li>' + job + '</li>' + 
+				'<li>' + city + '</li>' + 
+				'<li>' + hobbies + '</li>' + 
+			'</ul>';
 
-// append
-val += " " + age + " aastat vana";
+console.log(html);
 
-val += "\n" + text + " Minu tegevusalad on " + tags;
+document.body.innerHTML += html;
 
-// while loop
+// es6 - template string
 
-let int = val.length;
-while (int != 0){
-	console.log(val[int]);
-	int -= 1;
-};
+html = `
+	<ul>
+		<li>Name: ${name}</li>
+		<li>Age: ${age}</li>
+		<li>Job: ${job}</li>
+		<li>City: ${city}</li>
+		<li>Hobbies: ${hobbies}</li>
+	</ul>
+	`;
 
-// suuruse vahetus
-val = name.toUpperCase();
-val = surname.toLowerCase();
+console.log(html);
 
-
-val = surname[0];
-val = surname.indexOf(0);
-
-val = surname.charAt(2);
-val = surname.charAt(surname.length - 1);
-
-val = surname.substring(0, 4);
-val = surname.slice(0, 4);
-val = surname.slice(-3);
-
-val = tags.split();
-document.getElementById("demo").innerHTML = val;
+document.body.innerHTML += html;
