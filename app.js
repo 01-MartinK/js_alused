@@ -24,4 +24,17 @@ val = person.hobbies[1];
 val = person.address['city'];
 val = person.getBirthYear();
 
+const people = [
+	{name: 'Kadi', age: 36},
+	{name: 'Mati', age: 72},
+	{name: 'Gerald', age: 16},
+	{name: 'laura', age: 24}
+];
+
+val = people;
+
+for(let i = 0; i < people.length; i++){
+	console.log(people[i]);
+};
+
 console.log(val);
