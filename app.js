@@ -7,6 +7,9 @@ const person = {
 	address: {
 		city: "Singapore",
 		county: "Madagascar"
+	},
+	getBirthYear: function(){
+		return 2021 - this.age;
 	}
 };
 
@@ -19,5 +22,6 @@ val = person['lastName'];
 val = person.age;
 val = person.hobbies[1];
 val = person.address['city'];
+val = person.getBirthYear();
 
 console.log(val);
