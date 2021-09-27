@@ -1,40 +1,19 @@
-const person = {
-	firstName: "Alex",
-	lastName: "Mason",
-	age: 72,
-	email: "kadi.tamm@gmail.com",
-	hobbies: ["muusika","sport"],
-	address: {
-		city: "Singapore",
-		county: "Madagascar"
-	},
-	getBirthYear: function(){
-		return 2021 - this.age;
-	}
-};
-
 let val;
 
-val = person;
+const today = new Date();
 
-val = person.firstName;
-val = person['lastName'];
-val = person.age;
-val = person.hobbies[1];
-val = person.address['city'];
-val = person.getBirthYear();
+val = today.getMonth(); // starts at january 0
+val = today.getDate();
+val = today.getDay();
+val = today.getFullYear();
+val = today.getHours();
+val = today.getMinutes();
+val = today.getSeconds();
+val = today.getMilliseconds();
+val = today.getTime();
 
-const people = [
-	{name: 'Kadi', age: 36},
-	{name: 'Mati', age: 72},
-	{name: 'Gerald', age: 16},
-	{name: 'laura', age: 24}
-];
+let birthday = new Date('9-27-2001 11:00:00');
 
-val = people;
-
-for(let i = 0; i < people.length; i++){
-	console.log(people[i]);
-};
-
+console.log(birthday);
+console.log(today);
 console.log(val);
