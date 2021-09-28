@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      h2 {text-align: center;}
+      p {text-align: center;}
+      div {text-align: center;}
+      form {text-align: center;}
+    </style>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lihtne veebip]hine kalkulaator</title>
+  </head>
+  <body>
+    <h2>Simple calculator</h2>
+
+    <form>
+      <label for="fname">Esimene Number:</label><br>
+      <input type="text" id="fnumber" name="fname" value="0"><br>
+      <label for="lname">Teine Number:</label><br>
+      <input type="text" id="lnumber" name="lname" value="0">
+    </form>
+
+    <form>
+      <button type="button" onclick="liida()">+</button>
+      <button type="button" onclick="lahuta()">-</button>
+      <button type="button" onclick="korruta()">*</button>
+      <button type="button" onclick="jaga()">/</button>    
+    </form>
+
+    <p id="vastus">Vastus</p>
+    <script src="calculator.js"></script>
+  </body>
+</html>

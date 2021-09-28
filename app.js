@@ -1,26 +1,70 @@
-const color = "red";
+// for tsukkel
 
-switch(color) {
-	case 'red':
-		console.log('stop!');
+for (let i = 0;i < 10;i++){
+	if (i == 5){
 		break;
-	case 'green':
-		console.log('go!');
-		break;
-	case 'yellow':
-		console.log('wait!');
-		break;
-	default:
-		console.log('unregistered color');
-		break;
+	}
+	console.log(i);
 }
 
-/*
-loo kuupaev objekt
-nadalapaeva numbri jargi valjasta mis nadala paevaga on tegu - eesti keeles
-testi koik paevad
-*/
+// while tsukkel
 
-const test = ['puhapaev','esmaspaev','teisipaev','neljapaev','reede','laupaev']
-const day = new Date().getDay();
-console.log(test[day]);
+console.log("while tsukkel");
+
+let i = 5;
+
+while (i != 0){
+	console.log(i+" while");
+	i--;
+}
+
+console.log();
+
+// do while
+
+let j = 0;
+
+do {
+	console.log("do "+j);
+	j++;
+} while(j < 10);
+
+console.log();
+
+// tsuklid ja massiivid
+const cars = ['audi','bugatti','ford','mitsubishi']
+
+for (car in cars){
+	console.log(cars[car]);
+}
+
+console.log();
+
+// for each - callback function
+cars.forEach(function(car, index, array){
+	console.log(`cars[${index}] = ${car}`);
+	console.log(array);
+});
+
+console.log();
+
+// for each - (arrow) => function
+cars.forEach((car, index, array) => {
+	console.log(`cars[${index}] = ${car}`);
+	console.log(array);
+});
+
+console.log();
+
+// tsuklid ja objektid
+
+const person = {
+	firstname: "Kadi",
+	surname: "Tamm",
+	age: 25
+}
+
+// for in tsukkel
+for (let key in person){
+	console.log(`${key} = ${person[key]}`);
+}
