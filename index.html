@@ -4,26 +4,68 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JS alused</title>
+    <style>
+
+    h2 {text-align: center;}
+    ul {text-align: center;}
+    form {text-align: center;}
+    p {text-align: center;}
+    button {background-color: yellowgreen;
+            border-left: 64px;
+            border-right: 64px;
+
+    }
+
+    div.contentbox {background-color: green;border-width: 32px;border-color: black;border: dotted;margin-left: 128px;margin-right: 128px;}
+    div.contentbox2 {
+      border-width: 2px;
+      border-color: black;
+      border: solid;
+      margin-left: 128px;
+      /*margin-top: -32px;
+      margin-bottom: -32px;
+      */
+      margin-right: 128px;
+      border-radius: 16px;
+    }
+    div.contentbox3 {
+      border-width: 32px;
+      border-color: black;
+      border: dashed;
+      border-radius: 8px;
+      margin-left: 64px;
+      margin-right: 64px;
+    }
+
+    </style>
   </head>
   <body>
     <script src="app.js"></script>
-    <h2>JS Alused Tingimused ja Loopid</h2>
-    <p id="demo">Clicker.</p>
+    <div class="contentbox2">
+      <div class="contentbox">
 
-    <form>
-      <button type="button" onclick="add()">submit</button>
-      <input type="text" id="textField">submittable text</button>
-    </form>
+        <h2>Markmik</h2>
+        <p id="demo">Clicker.</p>
 
-    <h2>Todo</h2>
 
-    <ul id="list">
-      <li>Fuck</li>
-    </ul>
+        <form>
+          <input type="text" id="textField" value="new text"></button><br>
+          <button type="button" onclick="add()">submit</button>
+          <hr>
+        </form>
+      </div>
+      <h2>Todo</h2>
 
-    <h2>Raskem list</h2>
-    <form id="raskemlist"></form>
+      <div class="contentbox2">
+        <ul id="list">
+        </ul>
+      </div>
 
+      <h2>Raskem list</h2>
+      <div class="contentbox2">
+        <form id="raskemlist"></form>
+      </div>
+    </div>
 
   </body>
 </html>

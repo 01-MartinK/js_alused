@@ -1,11 +1,37 @@
+let text = [];
+
+function updateList(){
+		document.getElementById("list").innerHTML = '';
+		let html = '';
+		let html2 = '';
+
+		for(let i = 0; i < text.length; i++){
+			html += `<li>${text[i]}</li>`;
+			html2 += `
+							<div class="contentbox3">
+							<form id="${text[i]}form">
+							<label>${text[i]}</label>
+							<input type="button"	onclick="destroy('${text[i]}')" value="delete">
+							<label>done</label>
+							<input type="checkbox" text="done" value="done"><br>
+							</form>
+							</div>
+							`;
+		}
+
+		document.getElementById("list").innerHTML = html;
+		document.getElementById("raskemlist").innerHTML = html2;
+		console.log(text);
+}
+
+
 function add(){
 	let b = document.getElementById("textField").value;
-	let html = `
-							<label>${b}</label>
-							<button type="button" id="${b}" onclick="delete(${b})">Kustuta</button>
-							<input type="checkbox">tehtud</button><br>
-								`;
 	console.log(b);
-	document.getElementById("raskemlist").innerHTML += html+'<br>';
-	document.getElementById("list").innerHTML += `<li>${b}</li>`;
+	text.push(b);
+	updateList();
+}
+
+function destroy(id){
+	document.getElementById(id+"form").innerHTML = "";
 }
