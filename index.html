@@ -11,13 +11,17 @@
     ul {text-align: center;}
     form {text-align: center;}
     p {text-align: center;}
-    button {background-color: yellowgreen;
-            border-left: 64px;
-            border-right: 64px;
+    button {background-color: grey;
+            color: white;
+            width: 6em;
+            height: 3em;
+            border: 1px solid darkgrey;
+            border-radius: 0.35em;
+            
           }
-    div.noteBox{ border:1px solid black;
+    div.noteBox{
       text-align: left;
-      margin: 3em 16em 0em 16em;
+      margin: 3em 0em 0em 0em;
       padding:1em;
       box-shadow: ;
        }
@@ -26,7 +30,7 @@
   </head>
   <body>
 
-      <div style="box-shadow: 1px 1px 1px 1px;">
+      <div style="box-shadow: 1px 1px 1px 1px;margin:0em 16em 2em 16em">
         <div class="noteBox">
           <h2 id="titel" class="title">Markmik</h2>
 
@@ -39,11 +43,11 @@
           </form>
 
         </div>
-
-        <div style="border:1px solid black;margin:0em 16em 2em 16em;padding:1em;">
+        <hr>
+        <div style="margin:0em 0em 2em 0em;padding:1em;">
         <h2>Todo</h2>
 
-        <div class="contentbox2">
+        <div class="contentbox2" id="todoBox">
           <p>Mängida</p>
           <p>magada</p>
           <p>lollitada</p>

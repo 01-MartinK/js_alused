@@ -1,36 +1,13 @@
-let val;
+// elemendi loomine
+const p = document.createElement('p');
 
-const list = document.querySelector('div');
-const listItem = document.querySelector('p:first-child')
+// klassi määramine
+p.className = 'collection-item';
 
-val = list;
-val = listItem;
+// teksti lisamine
+p.appendChild(document.createTextNode('Study element creation.'));
 
-val = list.childNodes;
-val = list.childNodes[0];
-val = list.childNodes[0].nodeName;
-val = list.childNodes[0].nodeType;
+// elemendi lisamine teise elemendi sisse
+document.getElementById("todoBox").appendChild(p);
 
-val = list.children;
-val = list.children[1];
-//list.children[1].textContent = 'study xml';
-
-val = list.children[1].children[0].children;
-list.children[1].children[0].id = "test-id";
-
-val = list.firstChild;
-val = list.firstElementChild;
-
-val = list.LastChild;
-val = list.lastElementChild;
-
-val = list.childElementCount;
-
-val = listItem.parentNode;
-val = listItem.parentElement;
-val = listItem.parentElement.parentElement;
-
-val = listItem.nextSibling;
-val = listItem.nextElementSibling.nextElementSibling.previousElementSibling;
-
-console.log(val);
+console.log(p);
