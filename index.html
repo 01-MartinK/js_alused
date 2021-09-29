@@ -14,56 +14,35 @@
             border-left: 64px;
             border-right: 64px;
 
-    }
-
-    div.contentbox {background-color: green;border-width: 32px;border-color: black;border: dotted;margin-left: 128px;margin-right: 128px;}
-    div.contentbox2 {
-      border-width: 2px;
-      border-color: black;
-      border: solid;
-      margin-left: 128px;
-      /*margin-top: -32px;
-      margin-bottom: -32px;
-      */
-      margin-right: 128px;
-      border-radius: 16px;
-    }
-    div.contentbox3 {
-      border-width: 32px;
-      border-color: black;
-      border: dashed;
-      border-radius: 8px;
-      margin-left: 64px;
-      margin-right: 64px;
-    }
-
     </style>
   </head>
   <body>
-    <div class="contentbox2">
-      <div class="contentbox">
 
-        <h2 id="titel">Markmik</h2>
-        <p id="demo">Clicker.</p>
+      <h2 id="titel">Markmik</h2>
+      <p id="demo">Clicker.</p>
 
 
-        <form>
-          <input type="text" id="textField" value="new text"></button><br>
-          <button type="button" onclick="add()">submit</button>
-          <hr>
-        </form>
-      </div>
+      <form>
+        <input type="text" id="textField" value="new text"></button><br>
+        <button type="button" onclick="add()">submit</button>
+      </form>
+
+      <div style="border:4px outset black;margin:0em 16em 2em 16em;">
       <h2>Todo</h2>
 
       <div class="contentbox2">
-        <ul id="list">
-        </ul>
+        <p>Mängida</p>
+        <p>magada</p>
+        <p>lollitada</p>
+        <p>õppida</p>
+        <p>tutvuda js-iga</p>
+        <p>koolis käia</p>
       </div>
 
+      <hr>
+
       <h2>Raskem list</h2>
-      <div class="contentbox2">
         <form id="raskemlist"></form>
-      </div>
     </div>
     <script src="app.js"></script>
   </body>
