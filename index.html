@@ -7,42 +7,56 @@
     <style>
 
     h2 {text-align: center;}
+    h2.title {text-align: left;}
     ul {text-align: center;}
     form {text-align: center;}
     p {text-align: center;}
     button {background-color: yellowgreen;
             border-left: 64px;
             border-right: 64px;
+          }
+    div.noteBox{ border:1px solid black;
+      text-align: left;
+      margin: 3em 16em 0em 16em;
+      padding:1em;
+      box-shadow: ;
+       }
 
     </style>
   </head>
   <body>
 
-      <h2 id="titel">Markmik</h2>
-      <p id="demo">Clicker.</p>
+      <div style="box-shadow: 1px 1px 1px 1px;">
+        <div class="noteBox">
+          <h2 id="titel" class="title">Markmik</h2>
 
 
-      <form>
-        <input type="text" id="textField" value="new text"></button><br>
-        <button type="button" onclick="add()">submit</button>
-      </form>
+          <form style="text-align: left;">
+            <input type="text" id="textField" value="New Task" style="width:29em;line-height:2em ;border: 0px solid black;color: grey;">
+            <hr>
+            <button type="button" onclick="add()">Add Task</button>
+            
+          </form>
 
-      <div style="border:4px outset black;margin:0em 16em 2em 16em;">
-      <h2>Todo</h2>
+        </div>
 
-      <div class="contentbox2">
-        <p>Mängida</p>
-        <p>magada</p>
-        <p>lollitada</p>
-        <p>õppida</p>
-        <p>tutvuda js-iga</p>
-        <p>koolis käia</p>
+        <div style="border:1px solid black;margin:0em 16em 2em 16em;padding:1em;">
+        <h2>Todo</h2>
+
+        <div class="contentbox2">
+          <p>Mängida</p>
+          <p>magada</p>
+          <p>lollitada</p>
+          <p>õppida</p>
+          <p>tutvuda js-iga</p>
+          <p>koolis käia</p>
+        </div>
+
+        <hr>
+
+        <h2>Raskem list</h2>
+          <form id="raskemlist"></form>
       </div>
-
-      <hr>
-
-      <h2>Raskem list</h2>
-        <form id="raskemlist"></form>
     </div>
     <script src="app.js"></script>
   </body>
