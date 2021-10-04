@@ -1,13 +1,46 @@
-// elemendi loomine
-const p = document.createElement('p');
+// elemendi leidmine
+const textField = document.querySelector("#textField");
+const form = document.querySelector("#todoBox");
+const button = document.querySelector("#addTask");
 
-// klassi määramine
-p.className = 'collection-item';
+// reset text
+textField.value = "New Note";
 
-// teksti lisamine
-p.appendChild(document.createTextNode('Study element creation.'));
+// submit
+button.addEventListener('click', add);
+textField.addEventListener('click', click);
 
-// elemendi lisamine teise elemendi sisse
-document.getElementById("todoBox").appendChild(p);
+// keyboard
+//textField.addEventListener('keydown', runEvent);
+//textField.addEventListener('keyup', runEvent);
+// textField.addEventListener('keypress', runEvent);
 
-console.log(p);
+// focusing and unfocusing
+// textField.addEventListener('focus', runEvent);
+// textField.addEventListener('blur', runEvent);
+
+textField.addEventListener('cut', runEvent);
+textField.addEventListener('paste', runEvent);
+textField.addEventListener('input', runEvent);
+
+function click(){
+	textField.value = "";
+}
+
+function add(e){
+	console.log(`Event type: ${e.type}`)
+	const t = document.createElement('p');
+	const x = document.createElement('a');
+	t.appendChild(document.createTextNode(textField.value));
+	textField.value = "New Note";
+	x.value = 'x';
+	t.className = 'note';
+	x.className = 'x';
+	form.appendChild(x);
+	form.appendChild(t);
+}
+
+function runEvent(e){
+	console.log(`Event type: ${e.type}`);
+	// e.preventDefault();
+}

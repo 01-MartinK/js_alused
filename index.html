@@ -10,21 +10,67 @@
     h2.title {text-align: left;}
     ul {text-align: center;}
     form {text-align: center;}
-    p {text-align: center;}
-    button {background-color: grey;
+    p {
+        text-align: left;
+        background-color:  #eaeded ;
+        /*border: 1px solid  #85929e ;*/
+        box-shadow: 1px 3px 2px grey;
+        padding: 3px;
+        border-radius: 5px;
+      }
+    button {
+            background-color: grey;
             color: white;
             width: 6em;
             height: 3em;
             border: 1px solid darkgrey;
             border-radius: 0.35em;
-            
           }
+
+    button:hover {
+      background-color: lightgrey;
+      cursor: pointer;
+    }
+
+    button:active {
+      background-color:  #273746 ;
+    }
+
     div.noteBox{
       text-align: left;
       margin: 3em 0em 0em 0em;
       padding:1em;
       box-shadow: ;
        }
+    div.note{
+      text-align:left;
+      
+    }
+
+    input.textField{
+      width:29em;
+      line-height:2em ;
+      border: 0px solid black;
+      color: grey;
+    }
+    input.textField:focus{
+      color: black;
+    }
+
+    .x{
+      float: right;
+      padding: 3px;
+      color: green;
+      cursor: pointer;
+    }
+
+    .x:hover{
+      color: red;
+    }
+
+    .x:active{
+      color: maroon;
+    }
 
     </style>
   </head>
@@ -36,9 +82,9 @@
 
 
           <form style="text-align: left;">
-            <input type="text" id="textField" value="New Task" style="width:29em;line-height:2em ;border: 0px solid black;color: grey;">
+            <input type="text" id="textField" value="New Task" class="textField">
             <hr>
-            <button type="button" onclick="add()">Add Task</button>
+            <button type="button" id="addTask">Add Task</button>
             
           </form>
 
@@ -47,12 +93,18 @@
         <div style="margin:0em 0em 2em 0em;padding:1em;">
         <h2>Todo</h2>
 
-        <div class="contentbox2" id="todoBox">
+        <div class="contentbox2" name="todoBox" id="todoBox">
+          <a class="x" >x</a>
           <p>Mängida</p>
+          <a class="x" >x</a>
           <p>magada</p>
+          <a class="x" >x</a>
           <p>lollitada</p>
+          <a class="x" >x</a>
           <p>õppida</p>
+          <a class="x" >x</a>
           <p>tutvuda js-iga</p>
+          <a class="x" >x</a>
           <p>koolis käia</p>
         </div>
 
