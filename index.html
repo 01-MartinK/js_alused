@@ -78,13 +78,17 @@
 
       <div style="box-shadow: 1px 1px 1px 1px;margin:0em 16em 2em 16em">
         <div class="noteBox">
-          <h2 id="titel" class="title">Markmik</h2>
+          <h2 id="titel" class="title">Märkmik</h2>
 
 
           <form style="text-align: left;">
             <input type="text" id="textField" value="New Task" class="textField">
             <hr>
             <button type="button" id="addTask">Add Task</button>
+            <button type="button" id="findTask">Find Task</button>
+            <button type="button" id="clearTasks">Clear List</button>
+            <button type="button" id="saveTasks" onclick="saveList()">Save List</button>
+            <button type="button" id="loadTasks" onclick="loadList()">Load List</button>
             
           </form>
 
@@ -94,18 +98,6 @@
         <h2>Todo</h2>
 
         <div class="contentbox2" name="todoBox" id="todoBox">
-          <a class="x" >x</a>
-          <p>Mängida</p>
-          <a class="x" >x</a>
-          <p>magada</p>
-          <a class="x" >x</a>
-          <p>lollitada</p>
-          <a class="x" >x</a>
-          <p>õppida</p>
-          <a class="x" >x</a>
-          <p>tutvuda js-iga</p>
-          <a class="x" >x</a>
-          <p>koolis käia</p>
         </div>
 
         <hr>
