@@ -1,5 +1,3 @@
-let tasks = [];
-
 // elemendi leidmine
 const textField = document.querySelector("#textField");
 const form = document.querySelector("#todoBox");
@@ -30,9 +28,12 @@ function arrayRemove(arr, value) {
 
 
 function reorder(){
-	clearList();
-	let b = JSON.parse(localStorage.getItem("tasks"));
-	//tasks = b;
+	form.innerHTML = "";
+	tasks = [];
+
+	const ls = new storageManager();
+
+	b = ls.getAttributes('tasks');
 
 	for (let i = 0;i<b.length;i++){
 		addItem(b[i]);
@@ -58,44 +59,51 @@ function add(e){
 }
 
 function findTask(){
-	console.log(textField.value + "x");
-	let b = textField.value + "x"
-	document.querySelector(`#${b}`).style.border = "1px solid red";
+	console.log(textField.value);
+	let b = textField.value;
+	for (let i = 0;i<tasks.length;i++){
+		if (tasks[i] == b){
+			document.querySelector(`#${b+'x'}`).style.border = "1px solid red";
+		}
+	}
 }
 
 function addItem(name){
-	const t = document.createElement('p');
-	t.appendChild(document.createTextNode(name));
+	// create new ui object
+    const ui = new UI();
+    // create new Local Storage object
+    const ls = new storageManager();
 
-	let delete_html = `
-				<a class="x" id="${name}" onclick="deleteItem(this.id)">x</a>
-					
-	`;
-	t.id = name + 'x'
-	
-	t.className = 'note';
-	tasks.push(name);
-	form.innerHTML += delete_html;
-	form.appendChild(t);
+    if (name === '') {
+        ui.alertMessage("Add task data!", "problem");
+    } else {
+        // add task object data to html list
+        ui.addTaskToTable(name);
+        // save task data to Local Storage
+        ls.saveAttributes(tasks);
+        // show ok alert messege
+        ui.alertMessage("Added task to todo-list!", "ok");
+    }
 }
 
 function deleteItem(elementID){
-	if(confirm('!Do you want to delete this item')){
+	const ls = new storageManager();
+
+	if(confirm('!Do you want to delete this item!')){
 		tasks = arrayRemove(tasks, elementID);
 		form.removeChild(document.getElementById(elementID));
 		form.removeChild(document.getElementById(elementID+'x'));
+		ls.saveAttributes(tasks);
 		//document.getElementById(elementID+'x').innerHTML = "";
 	}
 }
 
 function clearList(){
+	const ls = new storageManager();
+
 	form.innerHTML = "";
 	tasks = [];
-}
-
-function saveList(){
-	console.log(tasks);
-	localStorage.setItem("tasks", JSON.stringify(tasks));
+	ls.saveAttributes(tasks);
 }
 
 function loadList(){

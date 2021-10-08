@@ -27,6 +27,10 @@
             border-radius: 0.35em;
           }
 
+    .alert{
+      color: green;
+    }
+
     button:hover {
       background-color: lightgrey;
       cursor: pointer;
@@ -86,8 +90,6 @@
             <hr>
             <button type="button" id="addTask">Add Task</button>
             <button type="button" id="findTask">Find Task</button>
-            <button type="button" id="clearTasks">Clear List</button>
-            <button type="button" id="saveTasks" onclick="saveList()">Save List</button>
             <button type="button" id="loadTasks" onclick="loadList()">Load List</button>
             
           </form>
@@ -99,6 +101,7 @@
 
         <div class="contentbox2" name="todoBox" id="todoBox">
         </div>
+        <button type="button" id="clearTasks">Clear List</button>
 
         <hr>
 
@@ -106,6 +109,8 @@
           <form id="raskemlist"></form>
       </div>
     </div>
+    <script src="classes/UI.js"></script>
+    <script src="classes/SM.js"></script>
     <script src="app.js"></script>
   </body>
 </html>
