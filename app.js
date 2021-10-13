@@ -19,6 +19,7 @@ textField.addEventListener('click', click);
 
 reorder()
 
+// remove value from array
 function arrayRemove(arr, value) { 
     
         return arr.filter(function(ele){ 
@@ -26,7 +27,7 @@ function arrayRemove(arr, value) {
         });
     }
 
-
+// get stuff and readd objects
 function reorder(){
 	form.innerHTML = "";
 	tasks = [];
@@ -52,22 +53,27 @@ function loseFocus(){
 }
 */
 
+// add event
 function add(e){
 	console.log(`Event type: ${e.type}`)
 	addItem(textField.value);
 	textField.value = "New Note";
 }
 
+// Item finding
 function findTask(){
 	console.log(textField.value);
 	let b = textField.value;
 	for (let i = 0;i<tasks.length;i++){
 		if (tasks[i] == b){
 			document.querySelector(`#${b+'x'}`).style.border = "1px solid red";
+		}else{
+			document.querySelector(`#${tasks[i]+'x'}`).style.border = "none";
 		}
 	}
 }
 
+// Item adding
 function addItem(name){
 	// create new ui object
     const ui = new UI();
@@ -86,6 +92,7 @@ function addItem(name){
     }
 }
 
+// Item deletion
 function deleteItem(elementID){
 	const ls = new storageManager();
 
@@ -98,6 +105,7 @@ function deleteItem(elementID){
 	}
 }
 
+// clear todo list
 function clearList(){
 	const ls = new storageManager();
 
@@ -106,15 +114,17 @@ function clearList(){
 	ls.saveAttributes(tasks);
 }
 
+// load list
 function loadList(){
 	console.log(tasks);
 	reorder();
 }
 
-
+// run event
 function runEvent(e){
 	console.log(`Event type: ${e.type}`);
 	// e.preventDefault();
 }
 
+// log tasks
 console.log(tasks);
