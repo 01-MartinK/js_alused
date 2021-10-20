@@ -7,41 +7,13 @@
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
+    <div>
 
-    <div id="container">
-      <h1>RaamatuHoidja</h1>
-      <form>
-        <div>
-          <label>Tiitel</label>
-          <input id="nameInput" type="text" placeholder="Sisestage raamatu nimi">
-        </div>
-        <div>
-          <label>Autor</label>
-          <input id="autorInput" type="text" placeholder="Sisestage raamatu author">
-        </div>
-        <div>
-          <label>ISBN Kood</label>
-          <input id="codeInput" type="text" placeholder="Sisestage raamatu ISBN kood">
-        </div>
-        <input id="btn" type="button" onclick="submitBook()" value="SUBMIT">
-      </form>
-      <hr>
+      <h1>Async and stuff</h1>
 
-      <div id="bookContainer">
-        <table class="border" id="table">
-          <tr class="border">
-            <th>Raamatu Tiitel</th>
-            <th>Raamatu Autor</th>
-            <th>Raamatu ISBN Kood</th>
-          </tr>
-        </table>
-      </div>
+      <h2 id="caller"></h2>
 
     </div>
-
-    <script src="classes/SM.js"></script>
-    <script src="classes/UI.js"></script>
-    <script src="classes/book.js"></script>
     <script src="app.js"></script>
   </body>
 </html>
