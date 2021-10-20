@@ -1,130 +1,51 @@
-// elemendi leidmine
-const textField = document.querySelector("#textField");
-const form = document.querySelector("#todoBox");
-const button = document.querySelector("#addTask");
-const findButton = document.querySelector("#findTask");
-const clearButton = document.querySelector("#clearTasks");
+let books = [];
 
-// reset text
-textField.value = "New Note";
+const nameValueHolder = document.querySelector("#nameInput");
+const autorValueHolder = document.querySelector("#autorInput");
+const codeHolder = document.querySelector("#codeInput");
+const submitBtn = document.querySelector("#btn")
 
-// listeners
-button.addEventListener('click', add);
-findButton.addEventListener('click', findTask);
-clearButton.addEventListener('click', clearList);
-textField.addEventListener('click', click);
+const saveManager = new storageManager;
+const UI = new UIManager;
 
-//textField.addEventListener('blur', loseFocus);
+startLoad()
 
-
-reorder()
-
-// remove value from array
 function arrayRemove(arr, value) { 
-    
-        return arr.filter(function(ele){ 
-            return ele != value; 
-        });
-    }
 
-// get stuff and readd objects
-function reorder(){
-	form.innerHTML = "";
-	tasks = [];
-
-	const ls = new storageManager();
-
-	b = ls.getAttributes('tasks');
-
-	for (let i = 0;i<b.length;i++){
-		addItem(b[i]);
-	}
-	
+    return arr.filter(function(ele){ 
+        return ele.name != value; 
+    });
 }
 
+function submitBook(){
+    console.log("submitted");
+    UI.alertMessage("Submitted Book");
+    UI.addBook(nameValueHolder.value,autorValueHolder.value,codeHolder.value);
+    saveBooks();
+} 
 
-function click(){
-	textField.value = "";
+// saving the books to local storage
+function saveBooks(){
+    saveManager.saveAttributes(books);
+}  
+
+// deleting a book
+function deleteBook(deletable){
+    const table = document.querySelector("#table");
+
+    table.removeChild(deletable.parentElement.parentElement.parentElement);
+    books = arrayRemove(books, deletable.id);
+    saveBooks();
+    UI.alertMessage("Deleted a Book");
 }
 
-/*
-function loseFocus(){
-	//textField.value = "New Note";
+function startLoad(){
+    let list = saveManager.getAttributes("books");
+    for(let i = 0;i<list.length;i++)
+    {
+        UI.addBook(list[i].name, list[i].author, list[i].code);
+    } 
+    books = list;
+    console.log(books);
+    UI.alertMessage("Loaded Library");
 }
-*/
-
-// add event
-function add(e){
-	console.log(`Event type: ${e.type}`)
-	addItem(textField.value);
-	textField.value = "New Note";
-}
-
-// Item finding
-function findTask(){
-	console.log(textField.value);
-	let b = textField.value;
-	for (let i = 0;i<tasks.length;i++){
-		if (tasks[i] == b){
-			document.querySelector(`#${b+'x'}`).style.border = "1px solid red";
-		}else{
-			document.querySelector(`#${tasks[i]+'x'}`).style.border = "none";
-		}
-	}
-}
-
-// Item adding
-function addItem(name){
-	// create new ui object
-    const ui = new UI();
-    // create new Local Storage object
-    const ls = new storageManager();
-
-    if (name === '') {
-        ui.alertMessage("Add task data!", "problem");
-    } else {
-        // add task object data to html list
-        ui.addTaskToTable(name);
-        // save task data to Local Storage
-        ls.saveAttributes(tasks);
-        // show ok alert messege
-        ui.alertMessage("Added task to todo-list!", "ok");
-    }
-}
-
-// Item deletion
-function deleteItem(elementID){
-	const ls = new storageManager();
-
-	if(confirm('!Do you want to delete this item!')){
-		tasks = arrayRemove(tasks, elementID);
-		form.removeChild(document.getElementById(elementID));
-		form.removeChild(document.getElementById(elementID+'x'));
-		ls.saveAttributes(tasks);
-		//document.getElementById(elementID+'x').innerHTML = "";
-	}
-}
-
-// clear todo list
-function clearList(){
-	const ls = new storageManager();
-
-	form.innerHTML = "";
-	tasks = [];
-	ls.saveAttributes(tasks);
-}
-
-// load list
-function loadList(){
-	console.log(tasks);
-	reorder();
-}
-
-// run event
-function runEvent(e){
-	console.log(`Event type: ${e.type}`);
-	// e.preventDefault();
-}
-
-// log tasks
-console.log(tasks);

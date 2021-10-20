@@ -1,19 +1,18 @@
 class storageManager {
 	saveAttributes(attributes) {
-		
-		let tasks = attributes;
+		let saveAbleObjects = attributes;
 
-		localStorage.setItem('tasks', JSON.stringify(tasks));
+		localStorage.setItem('books', JSON.stringify(saveAbleObjects));
 	}
 	getAttributes(attributes_name) {
-		let tasks;
+		let loadableObjects;
 
 		if (localStorage.getItem(attributes_name) !== null){
-			tasks = JSON.parse(localStorage.getItem(attributes_name));
+			loadableObjects = JSON.parse(localStorage.getItem(attributes_name));
 		}else{
-			tasks = [];
+			loadableObjects = [];
 		}
 
-		return tasks;
+		return loadableObjects;
 	}
 }

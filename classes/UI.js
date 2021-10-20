@@ -1,39 +1,39 @@
-class UI {
-	tasks;
+class UIManager {
 	alertMessage(message){
-		const div = document.createElement('div');
+		const bookContainer = document.querySelector("#bookContainer");
 
-		div.className = 'alert';
+		const label = document.createElement('label');
+		label.textContent = message;
 
-		const text = document.createTextNode(message);
+		label.className = 'alert';
 
-		div.appendChild(text);
-
-		const form = document.querySelector('#todoBox');
-
-		form.appendChild(div);
+		bookContainer.appendChild(label);
 
 		setTimeout(function (){
 			document.querySelector(".alert").remove();
-		}, 5000);
+		}, 2500);
 	}
 
-	addTaskToTable(task){
+	// Add book to list
+	addBook(name,autor,code){
+		const table = document.querySelector("#table");
 
-		const t = document.createElement('p');
-		const form = document.querySelector('#todoBox');
-		t.appendChild(document.createTextNode(task));
+		// new book object
+		let b = new Book(name,autor,code);
 
-		let delete_html = `
-					<a class="x" id="${task}" onclick="deleteItem(this.id)">x</a>
-						
-		`;
-		t.id = task + 'x'
-		
-		t.className = 'note';
-		tasks.push(task);
-		form.innerHTML += delete_html;
-		form.appendChild(t);
+		// html to insert to table
+		let html = 
+					`<tr>
+						<th>${name}</th>
+						<th>${autor}</th>
+						<th>${code}</th>
+						<th><a onclick="deleteBook(this)" id="${name}">X</a></th>
+					</tr>`;
+		table.innerHTML += html;
+		books.push(b);
 
-	}
+		// checking values
+		console.log(b);
+		console.log(books);
+	} 
 }

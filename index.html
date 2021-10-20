@@ -4,113 +4,44 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JS alused</title>
-    <style>
-
-    h2 {text-align: center;}
-    h2.title {text-align: left;}
-    ul {text-align: center;}
-    form {text-align: center;}
-    p {
-        text-align: left;
-        background-color:  #eaeded ;
-        /*border: 1px solid  #85929e ;*/
-        box-shadow: 1px 3px 2px grey;
-        padding: 3px;
-        border-radius: 5px;
-      }
-    button {
-            background-color: grey;
-            color: white;
-            width: 6em;
-            height: 3em;
-            border: 1px solid darkgrey;
-            border-radius: 0.35em;
-          }
-
-    .alert{
-      color: green;
-    }
-
-    button:hover {
-      background-color: lightgrey;
-      cursor: pointer;
-    }
-
-    button:active {
-      background-color:  #273746 ;
-    }
-
-    div.noteBox{
-      text-align: left;
-      margin: 3em 0em 0em 0em;
-      padding:1em;
-      box-shadow: none;
-       }
-    div.note{
-      text-align:left;
-      
-    }
-
-    input.textField{
-      width:29em;
-      line-height:2em ;
-      border: 0px solid black;
-      color: grey;
-    }
-    input.textField:focus{
-      color: black;
-    }
-
-    .x{
-      float: right;
-      padding: 3px;
-      color: green;
-      cursor: pointer;
-    }
-
-    .x:hover{
-      color: red;
-    }
-
-    .x:active{
-      color: maroon;
-    }
-
-    </style>
+    <link rel="stylesheet" href="style.css">
   </head>
   <body>
 
-      <div style="box-shadow: 1px 1px 1px 1px;margin:0em 16em 2em 16em">
-        <div class="noteBox">
-          <h2 id="titel" class="title">Märkmik</h2>
-
-
-          <form style="text-align: left;">
-            <input type="text" id="textField" value="New Task" class="textField">
-            <hr>
-            <button type="button" id="addTask">Add Task</button>
-            <button type="button" id="findTask">Find Task</button>
-            <button type="button" id="loadTasks" onclick="loadList()">Load List</button>
-            
-          </form>
-
+    <div id="container">
+      <h1>RaamatuHoidja</h1>
+      <form>
+        <div>
+          <label>Tiitel</label>
+          <input id="nameInput" type="text" placeholder="Sisestage raamatu nimi">
         </div>
-        <hr>
-        <div style="margin:0em 0em 2em 0em;padding:1em;">
-        <h2>Todo</h2>
-
-        <div class="contentbox2" name="todoBox" id="todoBox">
+        <div>
+          <label>Autor</label>
+          <input id="autorInput" type="text" placeholder="Sisestage raamatu author">
         </div>
-        <button type="button" id="clearTasks">Clear List</button>
+        <div>
+          <label>ISBN Kood</label>
+          <input id="codeInput" type="text" placeholder="Sisestage raamatu ISBN kood">
+        </div>
+        <input id="btn" type="button" onclick="submitBook()" value="SUBMIT">
+      </form>
+      <hr>
 
-        <hr>
-
-        <h2>Raskem list</h2>
-          <form id="raskemlist"></form>
+      <div id="bookContainer">
+        <table class="border" id="table">
+          <tr class="border">
+            <th>Raamatu Tiitel</th>
+            <th>Raamatu Autor</th>
+            <th>Raamatu ISBN Kood</th>
+          </tr>
+        </table>
       </div>
+
     </div>
-    <script src="classes/UI.js"></script>
+
     <script src="classes/SM.js"></script>
+    <script src="classes/UI.js"></script>
+    <script src="classes/book.js"></script>
     <script src="app.js"></script>
   </body>
 </html>
