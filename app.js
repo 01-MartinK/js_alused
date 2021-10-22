@@ -1,33 +1,15 @@
-// thenable
-class Thenable {
-    constructor(num) {
-      this.num = num;
-    }
-    then(resolve, reject) {
-      alert(resolve);
-      // resolve with this.num*2 after 1000ms
-      setTimeout(() => resolve(this.num * 2), 1000); // (*)
-    }
+function myFunction() {
+  const message = document.getElementById("p01");
+  message.innerHTML = "";
+  let x = document.getElementById("demo").value;
+  try {
+    if(x == "") throw "empty";
+    if(isNaN(x)) throw "not a number";
+    x = Number(x);
+    if(x < 5) throw "too low";
+    if(x > 10) throw "too high";
   }
-  
-  async function f() {
-    // waits for 1 second, then result becomes 2
-    let result = await new Thenable(1);
-    alert(result);
+  catch(err) {
+    message.innerHTML = "Input is " + err;
   }
-  
-  f();
-
-  // await
-  async function c() {
-
-    let promise = new Promise((resolve, reject) => {
-      setTimeout(() => resolve("done!"), 1000)
-    });
-  
-    let result = await promise; // wait until the promise resolves (*)
-  
-    alert(result); // "done!"
-  }
-  
-  c();
+}
