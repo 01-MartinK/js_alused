@@ -1,15 +1,34 @@
-function myFunction() {
-  const message = document.getElementById("p01");
-  message.innerHTML = "";
-  let x = document.getElementById("demo").value;
-  try {
-    if(x == "") throw "empty";
-    if(isNaN(x)) throw "not a number";
-    x = Number(x);
-    if(x < 5) throw "too low";
-    if(x > 10) throw "too high";
+function setCookie(cname,cvalue,exdays) {
+  const d = new Date();
+  d.setTime(d.getTime() + (exdays*24*60*60*1000));
+  let expires = "expires=" + d.toGMTString();
+  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+
+function getCookie(cname) {
+  let name = cname + "=";
+  let decodedCookie = decodeURIComponent(document.cookie);
+  let ca = decodedCookie.split(';');
+  for(let i = 0; i < ca.length; i++) {
+    let c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
   }
-  catch(err) {
-    message.innerHTML = "Input is " + err;
+  return "";
+}
+
+function checkCookie() {
+  let user = getCookie("username");
+  if (user != "") {
+    alert("Welcome again " + user);
+  } else {
+     user = prompt("Please enter your name:","");
+     if (user != "" && user != null) {
+       setCookie("username", user, 30);
+     }
   }
 }
